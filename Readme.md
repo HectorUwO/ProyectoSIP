@@ -2,6 +2,17 @@
 
 Sistema web desarrollado para la **Secretaría de Investigación y Posgrado** de la **Universidad Autónoma de Nayarit**, enfocado en la gestión integral de proyectos de investigación institucionales.
 
+## 📸 Capturas de Pantalla
+
+### Pantalla de Login
+![Pantalla de Login](docs/screenshot-login.png)
+
+### Panel de Proyectos
+![Panel de Proyectos](docs/screenshot-proyectos.png)
+
+### Registro de Proyecto
+![Registro de Proyecto](docs/screenshot-solicitud.png)
+
 ## 📋 Descripción
 
 PIIGPI es una plataforma que permite a investigadores, profesores y estudiantes gestionar el ciclo completo de proyectos de investigación, desde el registro inicial hasta el seguimiento de resultados y entregables.
@@ -153,31 +164,78 @@ ProyectoSIP/
 ## 🎨 Pantallas Principales
 
 ### 1. Login
+![Pantalla de Login](docs/screenshot-login.png)
+
 Pantalla de autenticación con diseño institucional que incluye:
-- Formulario de inicio de sesión
+- Formulario de inicio de sesión con email o número de empleado
+- Toggle para mostrar/ocultar contraseña
+- Opción "No cerrar sesión"
 - Recuperación de contraseña
-- Logos institucionales
+- Logos institucionales (SIP y UAN)
+- Diseño responsivo con panel izquierdo informativo
 
 ### 2. Panel de Usuario (Mis Proyectos)
-- Listado de proyectos del usuario
-- Filtros por estado: Todos, Aprobados, En revisión, Rechazados
-- Búsqueda de proyectos
-- Paginación automática
-- Notificaciones
+![Panel de Proyectos](docs/screenshot-proyectos.png)
+
+Dashboard principal con:
+- Sidebar con navegación (Proyectos, Reportes, Configuración)
+- Perfil del usuario con foto y rol
+- Sistema de notificaciones con badge contador
+- Filtros interactivos por estado:
+  - **Todos**: Muestra todos los proyectos
+  - **Aprobados**: Proyectos aceptados (badge verde)
+  - **En revisión**: Proyectos pendientes (badge naranja)
+  - **Rechazados**: Proyectos no aprobados (badge rojo)
+- Barra de búsqueda en tiempo real
+- Cards de proyectos con:
+  - Título y descripción
+  - Fecha de registro
+  - Estado visual con badge de color
+  - Botón "Ver detalles"
+- Paginación automática (3 proyectos por página)
+- Botón "Solicitar nuevo" para crear proyectos
 
 ### 3. Registro de Proyecto (Solicitud)
-Formulario multipaso que incluye:
-1. Responsable técnico
-2. Co-responsable técnico
-3. Tipo de proyecto
-4. Detalles del financiamiento
-5. Detalles del proyecto
-6. Entregables
-7. Grupo de trabajo
-8. Protocolo de investigación
-9. Resultados esperados
-10. Impacto de la propuesta
-11. Cronograma de actividades
+![Registro de Proyecto](docs/screenshot-solicitud.png)
+
+Formulario multipaso con navegación lateral que incluye:
+
+**Información General:**
+1. **Responsable técnico**
+   - Nombre completo
+   - Programa académico (selector)
+   - Máximo grado de estudios (Licenciatura/Maestría/Doctorado)
+   - Pertenencia al S.N.I.
+
+2. **Co-responsable técnico** (Protocolo de investigación)
+3. **Tipo de proyecto** (Resultados de propuesta)
+4. **Detalles del financiamiento**
+5. **Detalles del proyecto**
+   - Título
+   - Objetivos
+   - Metodología
+   - Cronograma
+
+6. **Entregables**
+   - Contadores dinámicos para diferentes tipos de productos
+
+7. **Grupo de trabajo**
+   - Agregar profesores colaboradores
+   - Agregar estudiantes participantes
+   - Modales para captura de información
+
+**Secciones Específicas:**
+- Protocolo de investigación
+- Resultados esperados
+- Impacto de la propuesta (2 partes)
+- Cronograma de actividades
+
+**Características del formulario:**
+- Indicador de progreso (X de Y pasos)
+- Validación en tiempo real
+- Navegación con botones "Anterior" y "Continuar"
+- Campos requeridos marcados con asterisco
+- Diseño responsivo y accesible
 
 ## 🎯 Funcionalidades por Desarrollar
 
