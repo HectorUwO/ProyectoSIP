@@ -1,0 +1,1040 @@
+@extends('layouts.main')
+
+@section('title', 'Registro de Proyecto')
+
+@push('styles')
+    @vite(['resources/css/solicitud.css'])
+@endpush
+
+@section('content')
+
+<div class="grid">
+ <aside class="sidebar">
+
+  <ul class="step">
+
+   <div class="step__content">
+    <div class="step__item">
+     <div class="step__number step--active" data-step="1">1</div>
+     <p class="step__text">Información general</p>
+    </div>
+   </div>
+
+   <div class="step__content">
+    <div class="step__item">
+     <div class="step__number" data-step="2">2</div>
+     <p class="step__text">Protocolo de investigación</p>
+    </div>
+   </div>
+
+   <div class="step__content">
+    <div class="step__item">
+     <div class="step__number" data-step="3">3</div>
+     <p class="step__text">Resultados de propuesta</p>
+    </div>
+   </div>
+
+   <div class="step__content">
+    <div class="step__item">
+     <div class="step__number" data-step="4">4</div>
+     <p class="step__text">Impactos de propuesta</p>
+    </div>
+   </div>
+
+   <div class="step__content">
+    <div class="step__item">
+     <div class="step__number" data-step="5">5</div>
+     <p class="step__text">Cronograma de actividades</p>
+    </div>
+   </div>
+
+  </ul>
+
+ </aside>
+
+ <main class="main">
+
+  <!-- Pantalla 1 -->
+  <div class="layout step-content" id="step-1">
+
+   <div class="card__header">
+    <div class="header__step"><strong>1</strong> de 6</div>
+    <h2 class="title">Responsable técnico</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <label class="group__label">Nombre completo *</label>
+     <input type="text" class="input" placeholder="Escriba su nombre completo" value="Perla Aguilar Navarrete" required minlength="5" maxlength="100">
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Programa académico al que pertenece *</label>
+     <select class="select" required>
+      <option value="">Seleccione una opción</option>
+      <option value="1">Ciencias Básicas e Ingenierías</option>
+      <option value="2">Ciencias Biológicas Agropecuarias</option>
+      <option value="3" selected>Ciencias Económicas y Administrativas</option>
+      <option value="4">Ciencias de la Salud</option>
+      <option value="5">Ciencias Sociales y Humanidades</option>
+      <option value="6">Artes</option>
+     </select>
+    </div>
+
+
+    <div class="form__group">
+     <label class="group__label">Máximo grado de estudios obtenido *</label>
+     <input type="hidden" name="grado-estudios" value="Doctorado" required>
+     <div class="card-select">
+      <div class="card">
+       <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+         d="M3 30C2.175 30 1.469 29.7065 0.882 29.1195C0.295 28.5325 0.001 27.826 0 27V3C0 2.175 0.294 1.469 0.882 0.882C1.47 0.295 2.176 0.001 3 0H21C21.825 0 22.5315 0.294 23.1195 0.882C23.7075 1.47 24.001 2.176 24 3V27C24 27.825 23.7065 28.5315 23.1195 29.1195C22.5325 29.7075 21.826 30.001 21 30H3ZM10.5 13.5L14.25 11.25L18 13.5V3H10.5V13.5Z"
+         fill="#656565" />
+       </svg>
+       <div class="card__title">Licenciatura</div>
+      </div>
+
+      <div class="card">
+       <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+         d="M3 30C2.175 30 1.469 29.7065 0.882 29.1195C0.295 28.5325 0.001 27.826 0 27V3C0 2.175 0.294 1.469 0.882 0.882C1.47 0.295 2.176 0.001 3 0H21C21.825 0 22.5315 0.294 23.1195 0.882C23.7075 1.47 24.001 2.176 24 3V27C24 27.825 23.7065 28.5315 23.1195 29.1195C22.5325 29.7075 21.826 30.001 21 30H3ZM10.5 13.5L14.25 11.25L18 13.5V3H10.5V13.5Z"
+         fill="#656565" />
+       </svg>
+       <div class="card__title">Maestría</div>
+      </div>
+
+      <div class="card card--active">
+       <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+         d="M3 30C2.175 30 1.469 29.7065 0.882 29.1195C0.295 28.5325 0.001 27.826 0 27V3C0 2.175 0.294 1.469 0.882 0.882C1.47 0.295 2.176 0.001 3 0H21C21.825 0 22.5315 0.294 23.1195 0.882C23.7075 1.47 24.001 2.176 24 3V27C24 27.825 23.7065 28.5315 23.1195 29.1195C22.5325 29.7075 21.826 30.001 21 30H3ZM10.5 13.5L14.25 11.25L18 13.5V3H10.5V13.5Z"
+         fill="#656565" />
+       </svg>
+       <div class="card__title">Doctorado</div>
+      </div>
+     </div>
+     </div>
+
+     <div class="form__group">
+     <label class="group__label">¿Pertenece al S.N.I.? *</label>
+       <div class="radio__content">
+       <input type="radio" class="radio" name="pertenece" value="si" required/>
+       <label>Sí</label>
+      </div>
+       <div class="radio__content">
+       <input type="radio" class="radio" name="pertenece" value="no" checked required/>
+       <label>No</label>
+      </div>
+     </div>
+
+     <div class="form__actions">
+      <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+       Continuar
+       <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+       </svg>
+      </button>
+     </div>
+
+   </form>
+
+
+  </div>
+
+  <!-- Pantalla 2 -->
+  <div class="layout step-content" id="step-2" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>2</strong> de 6</div>
+    <h2 class="title">Responsable técnico</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <label class="group__label">Nombre del cuerpo académico reconocido por PRODEP *</label>
+     <input type="text" class="input" placeholder="CIIDET-CA" value="CIIDET-CA" required minlength="3" maxlength="50">
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Grado de consolidación del C.A (Cuerpo Académico) *</label>
+     <input type="hidden" name="consolidacion-ca" value="Formación" required>
+     <div class="card-select">
+      <div class="card card--active">
+       <div class="card__title">Formación</div>
+      </div>
+
+      <div class="card">
+       <div class="card__title">Consolidación</div>
+      </div>
+
+      <div class="card">
+       <div class="card__title">Consolidado</div>
+      </div>
+     </div>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Pertenece al perfil PRODEP *</label>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="prodep" id="prodep-si" value="si" checked required/>
+      <label for="prodep-si">Sí</label>
+     </div>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="prodep" id="prodep-no" value="no" required/>
+      <label for="prodep-no">No</label>
+     </div>
+    </div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+      Continuar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+  <!-- Pantalla 3 -->
+  <div class="layout step-content" id="step-3" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>3</strong> de 6</div>
+    <h2 class="title">Tipo de proyecto</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <label class="group__label">Tipo de investigación *</label>
+     <select class="select" required>
+      <option value="">Seleccione una opción</option>
+      <option value="desarrollo-experimental" selected>Desarrollo experimental</option>
+      <option value="investigacion-basica">Investigación básica</option>
+      <option value="investigacion-aplicada">Investigación aplicada</option>
+     </select>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Tipo de financiamiento *</label>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="financiamiento" id="sin-financiamiento" value="sin-financiamiento" checked required/>
+      <label for="sin-financiamiento">Sin financiamiento</label>
+     </div>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="financiamiento" id="interno" value="interno" required/>
+      <label for="interno">Interno</label>
+     </div>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="financiamiento" id="externo" value="externo" required/>
+      <label for="externo">Externo</label>
+     </div>
+    </div>
+
+    <div id="option-html"></div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+      Continuar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+
+  <!-- Pantalla 4 -->
+  <div class="layout step-content" id="step-4" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>3</strong> de 6</div>
+    <h2 class="title">Detalles del financiamiento</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <label class="group__label">Tipo de fondo *</label>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="tipo-fondo" id="propios" value="propios" required/>
+      <label for="propios">Propios</label>
+     </div>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="tipo-fondo" id="privado" value="privado" required/>
+      <label for="privado">Privado</label>
+     </div>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="tipo-fondo" id="gobierno" value="gobierno" checked required/>
+      <label for="gobierno">Gobierno</label>
+     </div>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="tipo-fondo" id="fondos-publicos" value="fondos-publicos" required/>
+      <label for="fondos-publicos">Fondos públicos generales universitarios</label>
+     </div>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="tipo-fondo" id="instituciones-privadas" value="instituciones-privadas" required/>
+      <label for="instituciones-privadas">Instituciones privadas no lucrativas</label>
+     </div>
+     <div class="radio__content">
+      <input type="radio" class="radio" name="tipo-fondo" id="exterior" value="exterior" required/>
+      <label for="exterior">Exterior</label>
+     </div>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Acción de Transferencia de Tecnología y aplicación del conocimiento *</label>
+     <input type="text" class="input" placeholder="Escriba la acción" value="Desarrollo de sistema informático para gestión de proyectos" required minlength="10" maxlength="200">
+    </div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+      Continuar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+  <!-- Pantalla 5 -->
+  <div class="layout step-content" id="step-5" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>4</strong> de 6</div>
+    <h2 class="title">Detalles del proyecto</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <label class="group__label">Nombre del proyecto *</label>
+     <input type="text" class="input" placeholder="Escriba el nombre del proyecto" value="Sistema de investigación y Posgrado" required minlength="10" maxlength="150">
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Vigencia *</label>
+     <div style="display: flex; gap: 12px; align-items: center;">
+      <input type="date" class="input" value="2025-07-15" style="flex: 1;" required>
+      <span>Hasta</span>
+      <input type="date" class="input" value="2025-09-15" style="flex: 1;" required>
+     </div>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Área académica de la UAN *</label>
+     <select class="select" required>
+      <option value="">Seleccione una opción</option>
+      <option value="ciencias-economicas" selected>Ciencias Económicas y Administrativas</option>
+      <option value="ciencias-basicas">Ciencias Básicas e Ingenierías</option>
+      <option value="ciencias-biologicas">Ciencias Biológicas Agropecuarias</option>
+      <option value="ciencias-salud">Ciencias de la Salud</option>
+      <option value="ciencias-sociales">Ciencias Sociales y Humanidades</option>
+      <option value="artes">Artes</option>
+     </select>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Área de estudio (INEGI) *</label>
+     <select class="select" required>
+      <option value="">Seleccione una opción</option>
+      <option value="educacion" selected>Educación</option>
+      <option value="tecnologia">Tecnología</option>
+      <option value="salud">Salud</option>
+      <option value="ingenieria">Ingeniería</option>
+      <option value="ciencias-sociales">Ciencias Sociales</option>
+      <option value="economia">Economía</option>
+     </select>
+    </div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+      Continuar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+  <!-- Pantalla 6 -->
+  <div class="layout step-content" id="step-6" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>5</strong> de 6</div>
+    <h2 class="title">Entregables</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <div class="deliverable-item">
+      <div class="deliverable-controls">
+       <button type="button" class="counter-btn" onclick="decrementCounter('articulos-indexada')">−</button>
+       <button type="button" class="counter-btn" onclick="incrementCounter('articulos-indexada')">+</button>
+      </div>
+      <div class="deliverable-info">
+       <span class="deliverable-count" id="articulos-indexada">1</span>
+       <span class="deliverable-label">Artículos (revista indexada)</span>
+      </div>
+     </div>
+
+     <div class="deliverable-item">
+      <div class="deliverable-controls">
+       <button type="button" class="counter-btn" onclick="decrementCounter('articulos-arbitrada')">−</button>
+       <button type="button" class="counter-btn" onclick="incrementCounter('articulos-arbitrada')">+</button>
+      </div>
+      <div class="deliverable-info">
+       <span class="deliverable-count" id="articulos-arbitrada">0</span>
+       <span class="deliverable-label">Artículos (revista arbitrada)</span>
+      </div>
+     </div>
+
+     <div class="deliverable-item">
+      <div class="deliverable-controls">
+       <button type="button" class="counter-btn" onclick="decrementCounter('libros')">−</button>
+       <button type="button" class="counter-btn" onclick="incrementCounter('libros')">+</button>
+      </div>
+      <div class="deliverable-info">
+       <span class="deliverable-count" id="libros">0</span>
+       <span class="deliverable-label">Libros</span>
+      </div>
+     </div>
+
+     <div class="deliverable-item">
+      <div class="deliverable-controls">
+       <button type="button" class="counter-btn" onclick="decrementCounter('capitulo-libro')">−</button>
+       <button type="button" class="counter-btn" onclick="incrementCounter('capitulo-libro')">+</button>
+      </div>
+      <div class="deliverable-info">
+       <span class="deliverable-count" id="capitulo-libro">0</span>
+       <span class="deliverable-label">Capítulo de libro</span>
+      </div>
+     </div>
+
+     <div class="deliverable-item">
+      <div class="deliverable-controls">
+       <button type="button" class="counter-btn" onclick="decrementCounter('memorias-congreso')">−</button>
+       <button type="button" class="counter-btn" onclick="incrementCounter('memorias-congreso')">+</button>
+      </div>
+      <div class="deliverable-info">
+       <span class="deliverable-count" id="memorias-congreso">0</span>
+       <span class="deliverable-label">Memorias en extenso de congreso</span>
+      </div>
+     </div>
+
+     <div class="deliverable-item">
+      <div class="deliverable-controls">
+       <button type="button" class="counter-btn" onclick="decrementCounter('tesis')">−</button>
+       <button type="button" class="counter-btn" onclick="incrementCounter('tesis')">+</button>
+      </div>
+      <div class="deliverable-info">
+       <span class="deliverable-count" id="tesis">0</span>
+       <span class="deliverable-label">Tesis</span>
+      </div>
+     </div>
+
+     <div class="deliverable-item">
+      <div class="deliverable-controls">
+       <button type="button" class="counter-btn" onclick="decrementCounter('material-didactico')">−</button>
+       <button type="button" class="counter-btn" onclick="incrementCounter('material-didactico')">+</button>
+      </div>
+      <div class="deliverable-info">
+       <span class="deliverable-count" id="material-didactico">0</span>
+       <span class="deliverable-label">Material didáctico derivado del proyecto</span>
+      </div>
+     </div>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Otro</label>
+     <input type="text" class="input" placeholder="Patentes, fotografía científica etc." value="Patentes de software, material audiovisual" maxlength="200">
+    </div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+      Continuar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+  <!-- Pantalla 7 -->
+  <div class="layout step-content" id="step-7" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>6</strong> de 6</div>
+    <h2 class="title">Grupo de trabajo</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <label class="group__label">Colaborador profesor</label>
+      <button type="button" class="btn-add" onclick="addCollaborator('profesor')">
+       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 1V15M1 8H15" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+       </svg>
+       Agregar profesor
+      </button>
+     </div>
+
+     <div class="collaborator-list">
+      <div class="collaborator-item">
+       <div class="collaborator-avatar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="#6B7280"/>
+         <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="#6B7280"/>
+        </svg>
+       </div>
+       <div class="collaborator-info">
+        <div class="collaborator-name">Perla Aguilar Navarrete</div>
+        <div class="collaborator-role">Doctorado - Docente investigador</div>
+       </div>
+       <button type="button" class="btn-remove" onclick="removeCollaborator(this)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 4L4 12M4 4L12 12" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+       </button>
+      </div>
+
+      <div class="collaborator-item">
+       <div class="collaborator-avatar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="#6B7280"/>
+         <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="#6B7280"/>
+        </svg>
+       </div>
+       <div class="collaborator-info">
+        <div class="collaborator-name">Oscar Gabriel Vizcaíno Monroy</div>
+        <div class="collaborator-role">Doctorado - Docente investigador</div>
+       </div>
+       <button type="button" class="btn-remove" onclick="removeCollaborator(this)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 4L4 12M4 4L12 12" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+       </button>
+      </div>
+     </div>
+    </div>
+
+    <div class="form__group">
+     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <label class="group__label">Colaborador estudiante</label>
+      <button type="button" class="btn-add" onclick="addCollaborator('estudiante')">
+       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 1V15M1 8H15" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+       </svg>
+       Agregar estudiante
+      </button>
+     </div>
+
+     <div class="collaborator-list">
+      <div class="collaborator-item">
+       <div class="collaborator-avatar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="#6B7280"/>
+         <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="#6B7280"/>
+        </svg>
+       </div>
+       <div class="collaborator-info">
+        <div class="collaborator-name">Adán Mejía Cortes</div>
+        <div class="collaborator-role">Licenciatura - Analista (Prácticas profesionales)</div>
+       </div>
+       <button type="button" class="btn-remove" onclick="removeCollaborator(this)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 4L4 12M4 4L12 12" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+       </button>
+      </div>
+
+      <div class="collaborator-item">
+       <div class="collaborator-avatar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="#6B7280"/>
+         <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="#6B7280"/>
+        </svg>
+       </div>
+       <div class="collaborator-info">
+        <div class="collaborator-name">Hector Yair Medrano Coronel</div>
+        <div class="collaborator-role">Licenciatura - Desarrollador (Servicio Social)</div>
+       </div>
+       <button type="button" class="btn-remove" onclick="removeCollaborator(this)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 4L4 12M4 4L12 12" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+       </button>
+      </div>
+
+      <div class="collaborator-item">
+       <div class="collaborator-avatar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="#6B7280"/>
+         <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="#6B7280"/>
+        </svg>
+       </div>
+       <div class="collaborator-info">
+        <div class="collaborator-name">Brayan Ortiz Ramírez</div>
+        <div class="collaborator-role">Licenciatura - Diseñador (Becario)</div>
+       </div>
+       <button type="button" class="btn-remove" onclick="removeCollaborator(this)">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M12 4L4 12M4 4L12 12" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+       </button>
+      </div>
+     </div>
+    </div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+      Continuar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+  <!-- Pantalla 8 - Protocolo de investigación -->
+  <div class="layout step-content" id="step-8" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>1</strong> de 1</div>
+    <h2 class="title">Protocolo de investigación</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <label class="group__label">Subir archivo del protocolo de investigación *</label>
+     <input type="file" class="input" accept=".pdf,.doc,.docx" required>
+     <small class="form__help">Formatos permitidos: PDF, DOC, DOCX. Tamaño máximo: 10MB</small>
+    </div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+      Continuar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+  <!-- Pantalla 14 - Resultados esperados -->
+  <div class="layout step-content" id="step-14" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>1</strong> de 1</div>
+    <h2 class="title">Resultados esperados</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <label class="group__label">Resultados esperados de la propuesta *</label>
+     <textarea class="input" placeholder="Describa los resultados esperados del proyecto, incluyendo productos, impactos y beneficios que se espera obtener al finalizar la investigación" rows="12" required minlength="200" maxlength="3000">Se espera obtener un sistema web funcional que incluya: 1) Plataforma de registro y seguimiento de proyectos con interfaz intuitiva, 2) Base de datos centralizada con información de proyectos, participantes y recursos, 3) Módulo de reportes y estadísticas en tiempo real, 4) Sistema de notificaciones automáticas para fechas importantes, 5) Documentación técnica y manual de usuario completos. Los beneficios incluyen: reducción del 40% en tiempo de trámites administrativos, mejora en la comunicación entre participantes, incremento en la transparencia de procesos, y facilitación del seguimiento de proyectos. Se espera impactar positivamente a más de 700 usuarios directos de la comunidad universitaria.</textarea>
+    </div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+      Continuar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+  <!-- Pantalla 15 - Impacto de la propuesta (Parte 1) -->
+  <div class="layout step-content" id="step-15" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>1</strong> de 2</div>
+    <h2 class="title">Impacto de la propuesta</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <label class="group__label">Usuario específico de los resultados o productos del proyecto *</label>
+     <textarea class="input" placeholder="Describa quién será el usuario específico que se beneficiará directamente de los resultados o productos del proyecto" rows="4" required minlength="50" maxlength="500">Los usuarios específicos incluyen: estudiantes de posgrado (maestría y doctorado), profesores investigadores, coordinadores de programas académicos, personal administrativo de la Secretaría de Investigación y Posgrado, y directivos universitarios responsables de la gestión de proyectos académicos en la Universidad Autónoma de Nayarit.</textarea>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Impacto científico *</label>
+     <textarea class="input" placeholder="Describa el impacto científico esperado del proyecto (contribución al conocimiento, avances teóricos, metodológicos, etc.)" rows="4" required minlength="50" maxlength="500">El proyecto contribuirá al desarrollo de metodologías de gestión de proyectos académicos específicas para el contexto universitario mexicano. Se generarán métricas y análisis de procesos que podrán ser utilizados por otras instituciones. Los resultados serán publicados en revistas especializadas en tecnología educativa y gestión universitaria.</textarea>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Impacto tecnológico *</label>
+     <textarea class="input" placeholder="Describa el impacto tecnológico esperado del proyecto (desarrollo de nuevas tecnologías, mejoras en procesos, innovaciones técnicas, etc.)" rows="4" required minlength="50" maxlength="500">Se desarrollará una plataforma tecnológica escalable que podrá ser adaptada y replicada en otras universidades. El sistema incluirá innovaciones en interfaces de usuario, automatización de procesos administrativos y integración con sistemas existentes. Se creará un modelo de arquitectura de software específico para gestión académica.</textarea>
+    </div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+      Continuar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+  <!-- Pantalla 16 - Impacto de la propuesta (Parte 2) -->
+  <div class="layout step-content" id="step-16" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>2</strong> de 2</div>
+    <h2 class="title">Impacto de la propuesta</h2>
+   </div>
+
+   <form class="form">
+
+    <div class="form__group">
+     <label class="group__label">Impacto social *</label>
+     <textarea class="input" placeholder="Describa el impacto social esperado del proyecto (beneficios para la comunidad, mejoras en calidad de vida, desarrollo social, etc.)" rows="4" required minlength="50" maxlength="500">El proyecto mejorará la calidad de la educación superior en la región, facilitará el acceso a información académica y promoverá la transparencia en procesos universitarios. Los graduados tendrán mejor preparación para el mercado laboral y la investigación, contribuyendo al desarrollo social y económico de Nayarit.</textarea>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Impacto económico *</label>
+     <textarea class="input" placeholder="Describa el impacto económico esperado del proyecto (generación de valor, reducción de costos, oportunidades de negocio, etc.)" rows="4" required minlength="50" maxlength="500">Se espera una reducción del 30% en costos operativos de la gestión académica, menor uso de papel y recursos físicos, y optimización del tiempo del personal administrativo. El sistema puede ser licenciado a otras instituciones, generando ingresos adicionales para la universidad.</textarea>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Impacto ambiental *</label>
+     <textarea class="input" placeholder="Describa el impacto ambiental esperado del proyecto (sostenibilidad, conservación, reducción de impacto ecológico, etc.)" rows="4" required minlength="50" maxlength="500">La digitalización de procesos reducirá significativamente el consumo de papel y materiales de oficina. Se estima una reducción del 60% en uso de papel para trámites administrativos, contribuyendo a la sostenibilidad ambiental y a las políticas de universidad verde de la institución.</textarea>
+    </div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="nextStep()">
+      Continuar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+  <!-- Pantalla 17 - Cronograma de actividades -->
+  <div class="layout step-content" id="step-17" style="display: none;">
+
+   <div class="card__header">
+    <div class="header__step"><strong>1</strong> de 1</div>
+    <h2 class="title">Cronograma de actividades</h2>
+   </div>
+
+   <form class="form">
+    <div class="form__group">
+     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <label class="group__label">Actividades del proyecto</label>
+      <button type="button" class="btn-add" onclick="addActivity()">
+       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 1V15M1 8H15" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+       </svg>
+       Agregar actividad
+      </button>
+     </div>
+
+     <div class="schedule-container">
+      <table class="schedule-table">
+       <thead>
+        <tr>
+         <th class="activity-header">Actividad</th>
+         <th class="description-header">Descripción</th>
+         <th class="period-header" colspan="8">Período (trimestre)</th>
+         <th class="actions-header">Acciones</th>
+        </tr>
+        <tr class="period-subheader">
+         <th colspan="2"></th>
+         <th>1</th>
+         <th>2</th>
+         <th>3</th>
+         <th>4</th>
+         <th>5</th>
+         <th>6</th>
+         <th>7</th>
+         <th>8</th>
+         <th></th>
+        </tr>
+       </thead>
+       <tbody id="schedule-tbody">
+        <tr class="activity-row">
+         <td>
+          <input type="text" class="schedule-input" placeholder="Actividad 1" value="Revisión bibliográfica">
+         </td>
+         <td>
+          <input type="text" class="schedule-input" placeholder="Descripción de la actividad" value="Revisión exhaustiva de literatura especializada">
+         </td>
+         <td><input type="checkbox" class="period-checkbox" checked></td>
+         <td><input type="checkbox" class="period-checkbox" checked></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td>
+          <button type="button" class="btn-remove-activity" onclick="removeActivity(this)">
+           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4L4 12M4 4L12 12" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+           </svg>
+          </button>
+         </td>
+        </tr>
+        <tr class="activity-row">
+         <td>
+          <input type="text" class="schedule-input" placeholder="Actividad 2" value="Diseño metodológico">
+         </td>
+         <td>
+          <input type="text" class="schedule-input" placeholder="Descripción de la actividad" value="Definición de metodología y herramientas">
+         </td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox" checked></td>
+         <td><input type="checkbox" class="period-checkbox" checked></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td>
+          <button type="button" class="btn-remove-activity" onclick="removeActivity(this)">
+           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4L4 12M4 4L12 12" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+           </svg>
+         </button>
+        </td>
+        </tr>
+        <tr class="activity-row">
+         <td>
+          <input type="text" class="schedule-input" placeholder="Actividad 3" value="Desarrollo del proyecto">
+         </td>
+         <td>
+          <input type="text" class="schedule-input" placeholder="Descripción de la actividad" value="Implementación y desarrollo del sistema">
+         </td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox" checked></td>
+         <td><input type="checkbox" class="period-checkbox" checked></td>
+         <td><input type="checkbox" class="period-checkbox" checked></td>
+         <td><input type="checkbox" class="period-checkbox" checked></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td><input type="checkbox" class="period-checkbox"></td>
+         <td>
+          <button type="button" class="btn-remove-activity" onclick="removeActivity(this)">
+           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4L4 12M4 4L12 12" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+           </svg>
+         </button>
+        </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+
+    <div class="form__actions">
+     <button type="button" class="btn btn--secondary" onclick="prevStep()">
+      Regresar
+     </button>
+     <button type="button" class="btn btn--primary has-icon" onclick="submitForm()">
+      Enviar
+      <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M1 13.5L7 7.5L1 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     </button>
+    </div>
+
+   </form>
+  </div>
+
+ </main>
+
+</div>
+
+ <!-- Modal para el estudiante -->
+ <div id="modal-estudiante" class="modal" style="display: none;">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h3>Nuevo estudiante</h3>
+    <button type="button" class="modal-close" onclick="closeModal('modal-estudiante')">
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 6L6 18M6 6L18 18" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+     </svg>
+     Cancelar
+    </button>
+   </div>
+
+   <form class="modal-form">
+    <div class="form__group">
+     <label class="group__label">Nombre completo</label>
+     <input type="text" class="input" placeholder="Escriba su nombre completo" required>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Actividad</label>
+     <input type="text" class="input" placeholder="Escriba la actividad" required>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Tipo de formación académica</label>
+     <select class="select" required>
+      <option value="">Seleccione una opción</option>
+      <option value="servicio-social">Servicio social</option>
+      <option value="practicas-profesionales">Prácticas profesionales</option>
+      <option value="tesis">Tesis</option>
+      <option value="becario">Becario</option>
+     </select>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Máximo grado académico obtenido</label>
+     <div class="card-select">
+      <div class="card card--active">
+       <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 30C2.175 30 1.469 29.7065 0.882 29.1195C0.295 28.5325 0.001 27.826 0 27V3C0 2.175 0.294 1.469 0.882 0.882C1.47 0.295 2.176 0.001 3 0H21C21.825 0 22.5315 0.294 23.1195 0.882C23.7075 1.47 24.001 2.176 24 3V27C24 27.825 23.7065 28.5315 23.1195 29.1195C22.5325 29.7075 21.826 30.001 21 30H3ZM10.5 13.5L14.25 11.25L18 13.5V3H10.5V13.5Z" fill="#656565"/>
+       </svg>
+       <div class="card__title">Licenciatura</div>
+      </div>
+      <div class="card">
+       <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 30C2.175 30 1.469 29.7065 0.882 29.1195C0.295 28.5325 0.001 27.826 0 27V3C0 2.175 0.294 1.469 0.882 0.882C1.47 0.295 2.176 0.001 3 0H21C21.825 0 22.5315 0.294 23.1195 0.882C23.7075 1.47 24.001 2.176 24 3V27C24 27.825 23.7065 28.5315 23.1195 29.1195C22.5325 29.7075 21.826 30.001 21 30H3ZM10.5 13.5L14.25 11.25L18 13.5V3H10.5V13.5Z" fill="#656565"/>
+       </svg>
+       <div class="card__title">Maestría</div>
+      </div>
+      <div class="card">
+       <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 30C2.175 30 1.469 29.7065 0.882 29.1195C0.295 28.5325 0.001 27.826 0 27V3C0 2.175 0.294 1.469 0.882 0.882C1.47 0.295 2.176 0.001 3 0H21C21.825 0 22.5315 0.294 23.1195 0.882C23.7075 1.47 24.001 2.176 24 3V27C24 27.825 23.7065 28.5315 23.1195 29.1195C22.5325 29.7075 21.826 30.001 21 30H3ZM10.5 13.5L14.25 11.25L18 13.5V3H10.5V13.5Z" fill="#656565"/>
+       </svg>
+       <div class="card__title">Doctorado</div>
+      </div>
+     </div>
+    </div>
+
+    <div class="modal-actions">
+     <button type="button" class="btn btn--primary" onclick="addStudent()">
+      Agregar alumno
+     </button>
+    </div>
+   </form>
+  </div>
+ </div>
+
+ <!-- Modal para agregar profesor -->
+ <div id="modal-profesor" class="modal" style="display: none;">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h3>Nuevo profesor</h3>
+    <button type="button" class="modal-close" onclick="closeModal('modal-profesor')">
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 6L6 18M6 6L18 18" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+     </svg>
+     Cancelar
+    </button>
+   </div>
+
+   <form class="modal-form">
+    <div class="form__group">
+     <label class="group__label">Nombre completo</label>
+     <input type="text" class="input" placeholder="Escriba su nombre completo" required>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Actividad</label>
+     <input type="text" class="input" placeholder="Escriba la actividad" required>
+    </div>
+
+    <div class="form__group">
+     <label class="group__label">Máximo grado académico obtenido</label>
+     <div class="card-select">
+      <div class="card">
+       <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 30C2.175 30 1.469 29.7065 0.882 29.1195C0.295 28.5325 0.001 27.826 0 27V3C0 2.175 0.294 1.469 0.882 0.882C1.47 0.295 2.176 0.001 3 0H21C21.825 0 22.5315 0.294 23.1195 0.882C23.7075 1.47 24.001 2.176 24 3V27C24 27.825 23.7065 28.5315 23.1195 29.1195C22.5325 29.7075 21.826 30.001 21 30H3ZM10.5 13.5L14.25 11.25L18 13.5V3H10.5V13.5Z" fill="#656565"/>
+       </svg>
+       <div class="card__title">Licenciatura</div>
+      </div>
+      <div class="card">
+       <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 30C2.175 30 1.469 29.7065 0.882 29.1195C0.295 28.5325 0.001 27.826 0 27V3C0 2.175 0.294 1.469 0.882 0.882C1.47 0.295 2.176 0.001 3 0H21C21.825 0 22.5315 0.294 23.1195 0.882C23.7075 1.47 24.001 2.176 24 3V27C24 27.825 23.7065 28.5315 23.1195 29.1195C22.5325 29.7075 21.826 30.001 21 30H3ZM10.5 13.5L14.25 11.25L18 13.5V3H10.5V13.5Z" fill="#656565"/>
+       </svg>
+       <div class="card__title">Maestría</div>
+      </div>
+      <div class="card card--active">
+       <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 30C2.175 30 1.469 29.7065 0.882 29.1195C0.295 28.5325 0.001 27.826 0 27V3C0 2.175 0.294 1.469 0.882 0.882C1.47 0.295 2.176 0.001 3 0H21C21.825 0 22.5315 0.294 23.1195 0.882C23.7075 1.47 24.001 2.176 24 3V27C24 27.825 23.7065 28.5315 23.1195 29.1195C22.5325 29.7075 21.826 30.001 21 30H3ZM10.5 13.5L14.25 11.25L18 13.5V3H10.5V13.5Z" fill="#656565"/>
+       </svg>
+       <div class="card__title">Doctorado</div>
+      </div>
+     </div>
+    </div>
+
+    <div class="modal-actions">
+     <button type="button" class="btn btn--primary" onclick="addProfessor()">
+      Agregar profesor
+     </button>
+    </div>
+   </form>
+  </div>
+ </div>
+
+@endsection
+
+@push('scripts')
+    @vite(['resources/js/solicitud.js'])
+@endpush
