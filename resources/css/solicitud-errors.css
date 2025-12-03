@@ -1,0 +1,107 @@
+/* Estilos para mensajes de error de Laravel */
+.error-message {
+    color: #EF4444;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    display: block;
+}
+
+.input.error,
+.select.error {
+    border-color: #EF4444 !important;
+    box-shadow: 0 0 0 1px #EF4444;
+}
+
+.form__group .error-message {
+    margin-top: 0.25rem;
+}
+
+/* Mejoras de accesibilidad */
+.input:focus,
+.select:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Estilos para campos válidos */
+.input:valid:not(:placeholder-shown),
+.select:valid:not([value=""]) {
+    border-color: #22C55E;
+}
+
+/* Indicadores visuales mejorados */
+.card--active {
+    border-color: #007bff !important;
+    background-color: rgba(0, 123, 255, 0.05);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.card--active .card__title {
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* Transiciones suaves */
+.card {
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+    transform: translateY(-1px);
+}
+
+/* Notificaciones */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 9999;
+    opacity: 0;
+    animation: slideInRight 0.3s ease-out forwards;
+}
+
+.notification--success {
+    background-color: #22C55E;
+}
+
+.notification--error {
+    background-color: #EF4444;
+}
+
+.notification--warning {
+    background-color: #F59E0B;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Contador de caracteres */
+.character-count {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #6B7280;
+    margin-top: 4px;
+}
+
+.character-count.warning {
+    color: #F59E0B;
+}
+
+.character-count.error {
+    color: #EF4444;
+}
