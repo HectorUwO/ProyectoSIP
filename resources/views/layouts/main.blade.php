@@ -32,27 +32,53 @@
             </div>
 
             <div class="profile">
-                <img src="{{ asset('rsc/img/profile.png') }}" alt="Usuario" class="profile-img">
-                <h3>Dr. Juan Pérez</h3>
-                <p>Docente investigador</p>
+                <img src="{{ Auth::guard('investigador')->check() ? Auth::guard('investigador')->user()->profile_image : Auth::guard('personal')->user()->profile_image }}" alt="Usuario" class="profile-img">
+                <h3>
+                    @if(Auth::guard('investigador')->check())
+                        @php
+                            $investigador = Auth::guard('investigador')->user();
+                            $prefijo = '';
+                            switch($investigador->nivel_academico) {
+                                case 'licenciatura':
+                                    $prefijo = 'Lic.';
+                                    break;
+                                case 'maestria':
+                                    $prefijo = 'M.';
+                                    break;
+                                case 'doctorado':
+                                    $prefijo = 'Dr.';
+                                    break;
+                                default:
+                                    $prefijo = '';
+                            }
+                        @endphp
+                        {{ $prefijo }} {{ $investigador->nombre }}
+                    @else
+                        {{ Auth::guard('personal')->user()->nombre ?? 'Usuario' }}
+                    @endif
+                </h3>
+                <p>{{ Auth::guard('investigador')->check() ? 'Investigador' : 'Personal administrativo' }}</p>
             </div>
 
             <nav class="menu">
-                <a href="#" class="menu-item active">
+                <a href="{{ Auth::guard('investigador')->check() ? route('user') : route('admin.dashboard') }}" class="menu-item {{ request()->routeIs('user', 'admin.dashboard') ? 'active' : '' }}">
                     <i class="fa-solid fa-folder-open"></i>
-                    Proyectos
+                    {{ Auth::guard('investigador')->check() ? 'Proyectos' : 'Panel' }}
                 </a>
-                <a href="#" class="menu-item">
+                <a href="#" class="menu-item disabled" disabled>
                     <i class="fa-solid fa-file-lines"></i>
                     Reportes
                 </a>
-                <a href="#" class="menu-item">
+                <a href="{{ Auth::guard('investigador')->check() ? route('investigador.config') : route('admin.config') }}" class="menu-item {{ request()->routeIs('investigador.config', 'admin.config') ? 'active' : '' }}">
                     <i class="fa-solid fa-gear"></i>
                     Configuración
                 </a>
-                <a href="#" class="menu-item">
+                <a href="{{ route('logout') }}" class="menu-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     Cerrar sesión
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </a>
             </nav>
         </aside>

@@ -11,7 +11,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Sanitizar archivos subidos
+        $middleware->append(\App\Http\Middleware\SanitizeFileUploads::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

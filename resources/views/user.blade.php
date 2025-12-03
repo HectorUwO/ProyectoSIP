@@ -25,30 +25,30 @@
         </div>
 
         <div class="filter-container">
-            <button class="filter-btn" data-filter="approved">
+            <button class="filter-btn" data-filter="aprobado">
                 <i class="fa-regular fa-circle-check"></i>
                 Aprobados
             </button>
         </div>
 
         <div class="filter-container">
-            <button class="filter-btn" data-filter="revision">
+            <button class="filter-btn" data-filter="en_revision">
                 <i class="fa-regular fa-alarm-clock"></i>
                 En revisión
             </button>
         </div>
 
         <div class="filter-container">
-            <button class="filter-btn" data-filter="rejected">
+            <button class="filter-btn" data-filter="rechazado">
                 <i class="fa-regular fa-circle-xmark"></i>
                 Rechazados
             </button>
         </div>
 
         <div class="filter-container">
-            <button class="btn-primary">
+            <a href="{{ route('proyectos.create') }}" class="btn-primary">
                 <i class="fa-solid fa-plus"></i> Solicitar nuevo
-            </button>
+            </a>
         </div>
     </div>
 
@@ -60,81 +60,48 @@
     </div>
 
     <div class="projects-list">
-        <div class="project-card" data-status="approved">
-            <div class="project-header">
-                <h3>Sistema de gestión de inventarios</h3>
-                <span class="project-date">Se registró el 15/10/2024</span>
+        @forelse($proyectos as $proyecto)
+            <div class="project-card" data-status="{{ $proyecto->estado }}">
+                <div class="project-header">
+                    <h3>{{ $proyecto->titulo }}</h3>
+                    <span class="project-date">Se registró el <i class="fa-regular fa-calendar-days"></i> {{ $proyecto->created_at->format('d/m/Y') }}</span>
+                </div>
+                <p class="project-description">
+                    {{ $proyecto->descripcion_breve }}
+                </p>
+                <div class="project-footer">
+                    <span class="badge-status {{ $proyecto->estado === 'aprobado' ? 'approved' : ($proyecto->estado === 'en_revision' ? 'revision' : 'rejected') }}">
+                        @switch($proyecto->estado)
+                            @case('aprobado')
+                                Aprobado
+                                @break
+                            @case('en_revision')
+                                En revisión
+                                @break
+                            @case('rechazado')
+                                Rechazado
+                                @break
+                            @case('finalizado')
+                                Finalizado
+                                @break
+                            @default
+                                {{ ucfirst(str_replace('_', ' ', $proyecto->estado)) }}
+                        @endswitch
+                    </span>
+                    <a href="{{ route('proyectos.show', $proyecto->no_registro) }}" class="btn-details">
+                        Detalles
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
             </div>
-            <p class="project-description">
-                Desarrollo de un sistema web para la gestión eficiente de inventarios en pequeñas y medianas empresas, con módulos de control de stock y reportes.
-            </p>
-            <div class="project-footer">
-                <span class="badge-status approved">
-                    Aprobado
-                </span>
-                <a href="#" class="btn-details">
-                    Detalles
-                    <i class="fa-solid fa-chevron-right"></i>
+        @empty
+            <div class="no-projects">
+                <p>No tienes proyectos registrados aún.</p>
+                <a href="{{ route('proyectos.create') }}" class="btn-primary">
+                    <i class="fa-solid fa-plus"></i> Crear mi primer proyecto
                 </a>
             </div>
-        </div>
-
-        <div class="project-card" data-status="revision">
-            <div class="project-header">
-                <h3>Análisis de algoritmos de machine learning</h3>
-                <span class="project-date">Se registró el 03/11/2024</span>
-            </div>
-            <p class="project-description">
-                Investigación comparativa sobre la eficiencia de diferentes algoritmos de aprendizaje automático aplicados a la clasificación de datos médicos.
-            </p>
-            <div class="project-footer">
-                <span class="badge-status revision">
-                    En revisión
-                </span>
-                <a href="#" class="btn-details">
-                    Detalles
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="project-card" data-status="rejected">
-            <div class="project-header">
-                <h3>Aplicación móvil para turismo</h3>
-                <span class="project-date">Se registró el 28/09/2024</span>
-            </div>
-            <p class="project-description">
-                Aplicación móvil multiplataforma para promover el turismo local con geolocalización y recomendaciones personalizadas.
-            </p>
-            <div class="project-footer">
-                <span class="badge-status rejected">
-                    Rechazado
-                </span>
-                <a href="#" class="btn-details">
-                    Detalles
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="project-card" data-status="approved">
-            <div class="project-header">
-                <h3>Plataforma educativa virtual</h3>
-                <span class="project-date">Se registró el 12/10/2024</span>
-            </div>
-            <p class="project-description">
-                Desarrollo de una plataforma LMS para la gestión de cursos en línea, con seguimiento de estudiantes y evaluaciones automatizadas.
-            </p>
-            <div class="project-footer">
-                <span class="badge-status approved">
-                    Aprobado
-                </span>
-                <a href="#" class="btn-details">
-                    Detalles
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-            </div>
-        </div>
+        @endforelse
     </div>
 
     <div class="pagination" id="pagination" style="display: none;">
